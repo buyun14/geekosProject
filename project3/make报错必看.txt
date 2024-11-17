@@ -1,0 +1,10 @@
+## 无需求直接 boch 运行即可，make编译报错解决方案如下
+该项目是可以直接运行的，不用麦克编译，如果你编译报错并且弹出gcc和一个路径字样说明是gcc版本问题，（系统里那个路径下自带的是4.4和4.4.3的gcc），而这个项目太老需要运行，需要3.4.6的（更新降级又太麻烦），这里介绍一个简单的方法。
+
+### 
+```
+sudo -i
+cp -R /usr/lib/gcc/i486-linux-gnu/4.4.3 /usr/lib/gcc/i486-linux-gnu/3.4.6
+cp /usr/lib/gcc/i486-linux-gnu/3.4.6/include-fixed/limits.h /usr/lib/gcc/i486-linux-gnu/3.4.6/include/
+cp /usr/lib/gcc/i486-linux-gnu/3.4.6/include-fixed/syslimits.h /usr/lib/gcc/i486-linux-gnu/3.4.6/include/
+```
